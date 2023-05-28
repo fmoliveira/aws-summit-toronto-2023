@@ -1,3 +1,9 @@
+import AgendaDisplay from "@/components/AgendaDisplay";
+
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <AgendaDisplay />
+    </main>
+  );
 }
