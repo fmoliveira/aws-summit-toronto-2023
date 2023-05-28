@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import getSummitAgenda from "@/services/getSummitAgenda";
 
 const agenda = getSummitAgenda();
@@ -5,17 +7,27 @@ const agenda = getSummitAgenda();
 export default function AgendaDisplay() {
   return (
     <div>
+      <Image
+        src="/logo.webp"
+        alt="AWS Toronto"
+        width={180}
+        height={180}
+        priority
+      />
       <h1 className="text-3xl font-bold py-3">AWS Summit Toronto 2023</h1>
-      <p>
-        <a
-          href="https://aws.amazon.com/events/summits/toronto/"
-          target="_blank"
-          rel="noreferrer noopener"
-          className="text-cyan-200 hover:text-indigo-400 hover:underline"
-        >
-          https://aws.amazon.com/events/summits/toronto/
-        </a>
-      </p>
+      <div className="flex flex-col gap-2">
+        <p>Organize your schedule for the AWS Summit Toronto 2023!</p>
+        <p>
+          <a
+            href="https://aws.amazon.com/events/summits/toronto/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-cyan-200 hover:text-indigo-400 hover:underline"
+          >
+            Check more information in the official conference website.
+          </a>
+        </p>
+      </div>
       {agenda.map((daySchedule) => (
         <div key={daySchedule.day} className="my-4">
           <h2 className="text-2xl font-bold py-2">{daySchedule.day}</h2>
