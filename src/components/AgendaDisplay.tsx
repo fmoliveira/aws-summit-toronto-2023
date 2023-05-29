@@ -48,9 +48,9 @@ export default function AgendaDisplay() {
                     {!!session.subHeadline && (
                       <p>
                         <span className="text-slate-200 font-semibold">
-                          Hosts:
+                          Facilitator{session.facilitatorCount > 1 && "s"}:
                         </span>{" "}
-                        {session.subHeadline}
+                        {session.facilitators?.join("; ")}
                       </p>
                     )}
                     {!!session.expertise && (

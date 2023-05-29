@@ -26,6 +26,14 @@ export default function getSummitAgenda() {
     )
     .map((item) => ({
       ...item,
+      facilitators: item.subHeadline?.split(";").map((name) => name.trim()),
+    }))
+    .map((item) => ({
+      ...item,
+      facilitatorCount: item.facilitators?.length ?? 0,
+    }))
+    .map((item) => ({
+      ...item,
       description: stripHtml(item.description).result,
     }))
     .map((item) => ({
