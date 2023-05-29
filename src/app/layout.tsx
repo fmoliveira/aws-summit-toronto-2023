@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import FavIcon from "./FavIcon";
 import OpenGraph from "./OpenGraph";
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <FavIcon />
       <OpenGraph title={metadata.title} description={metadata.description} />
+      <Analytics />
       <body className={inter.className}>{children}</body>
     </html>
   );
