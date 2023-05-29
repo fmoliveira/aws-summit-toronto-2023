@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 
 import FavIcon from "./FavIcon";
+import OpenGraph from "./OpenGraph";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <FavIcon />
+      <OpenGraph title={metadata.title} description={metadata.description} />
       <body className={inter.className}>{children}</body>
     </html>
   );
